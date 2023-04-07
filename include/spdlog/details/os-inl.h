@@ -88,7 +88,7 @@ SPDLOG_INLINE std::tm localtime(const std::time_t &time_tt) SPDLOG_NOEXCEPT
 
 #ifdef _WIN32
     std::tm tm;
-    ::localtime_s(&tm, &time_tt);
+    ::_localtime64_s(&tm, &time_tt);
 #else
     std::tm tm;
     ::localtime_r(&time_tt, &tm);
